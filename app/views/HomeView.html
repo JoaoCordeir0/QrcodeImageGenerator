@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{head}}
+    <title>QrCode App</title>
+</head>
+
+<body>
+
+    <main class="container mt-5">
+
+        <h4>Qr Code Image Generator</h4>
+
+        <form action="/showqrcode" class="row gy-2 gx-3 align-items-center" method="post">
+            <div class="row mt-3">
+                <div class="col inputLine">
+                    <label class="visually-hidden" for="name"></label>
+                    <div class="input-group">
+                        <div class="input-group-text">Name</div>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col inputLine">
+                    <label class="visually-hidden" for="linkedin"></label>
+                    <div class="input-group">
+                        <div class="input-group-text">Linkedin URL</div>
+                        <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col inputLine">
+                    <label class="visually-hidden" for="github"></label>
+                    <div class="input-group">
+                        <div class="input-group-text">Github URL</div>
+                        <input type="text" class="form-control" id="github" name="github" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col inputLine">
+                    <button type="submit" class="btn btn-light">Generate Image</button>
+                </div>
+            </div>
+        </form>
+
+    </main>
+
+</body>
+
+{{scripts}}
+
+</html>
