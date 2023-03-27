@@ -1,5 +1,8 @@
 # App QRCODE
 
-João is tired of using business cards for his business. He liked having a picture on his phone so that people scanning it could see all their data on one page.
+> App de qrcode desenvolvido em PHP.
 
-Your goal is to create a tool that helps João solve his problem in a simple way
+> Lib: "chillerlan/php-qrcode": "4.3.4"
+> Extension: "ext-gd": "*"
+
+Link: (https://thawing-scrubland-44857.herokuapp.com/)[https://thawing-scrubland-44857.herokuapp.com/]
