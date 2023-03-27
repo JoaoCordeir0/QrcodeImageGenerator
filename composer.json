@@ -12,6 +12,7 @@
         }
     ],
     "require": {
+        "ext-gd": "*",
         "chillerlan/php-qrcode": "4.3.4"
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\controllers 
 {
-    use App\models\QrCodeModel;
+    use App\models\QrcodeModel;
 
     class QrcodeController
     {       
@@ -13,11 +13,11 @@ namespace App\controllers
         {                         
             if (!empty($_POST['name']) && !empty($_POST['linkedin']) && !empty($_POST['github']))
             {
-                $url = "http://" . $_SERVER['HTTP_HOST'] . "/detailsqrcode?id=" . (new QrCodeModel)->setNewQrcode($_POST['name'], $_POST['linkedin'], $_POST['github']); 
+                $url = "http://" . $_SERVER['HTTP_HOST'] . "/detailsqrcode?id=" . (new QrcodeModel)->setNewQrcode($_POST['name'], $_POST['linkedin'], $_POST['github']); 
                                 
                 $arrayMap = [
                     'name' => $_POST['name'],
-                    'qrcode' => (new QrCodeModel)->qrcodeGenerator($url),
+                    'qrcode' => (new QrcodeModel)->qrcodeGenerator($url),
                 ];  
 
                 $arrayMap = array_merge($arrayMap, PartialsController::partials());
@@ -36,7 +36,7 @@ namespace App\controllers
          */
         public function redirectDetailsqrcode()
         {
-            $data = (new QrCodeModel)->getInfoQrcode($_GET['id']);            
+            $data = (new QrcodeModel)->getInfoQrcode($_GET['id']);            
 
             $_SESSION['name'] = $data['name'];
             $_SESSION['linkedin'] = $data['linkedin'];
