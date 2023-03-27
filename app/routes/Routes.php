@@ -3,6 +3,8 @@
 namespace App\routes 
 {   
     use App\controllers\HomeController;
+    use App\controllers\QrcodeController;
+    use App\models\QrcodeModel;
     use Exception;
 
     class Routes
@@ -37,23 +39,22 @@ namespace App\routes
 
         protected function showqrcode()
         {
-            (new HomeController)->pageShowQrCode('ShowQrcodeView');  
+            (new QrcodeController)->pageShowQrCode('ShowQrcodeView');  
+        }
+
+        protected function detailsqrcode()
+        {            
+            (new QrcodeController)->redirectDetailsqrcode();          
         }
 
         protected function qrcodeinfo()
-        {
-            $_SESSION['name'] = $_GET['name'];
-            $_SESSION['linkedin'] = $_GET['linkedin'];
-            $_SESSION['github'] = $_GET['github'];
-            
-            $newURL = $_SERVER['HTTP_POST'] . '/' . base64_decode($_GET['name']);
-
-            header('Location: ' . $newURL);
+        {            
+            print_r((new QrcodeModel)->getInfoQrcode($_GET['id']));            
         }
         
         public function __call($name, $arguments)
         {            
-            (new HomeController)->pageQrCodeDetails('DetailsQrcodeView');  
+            (new QrcodeController)->pageQrCodeDetails('DetailsQrcodeView');  
         }
     }
 }
