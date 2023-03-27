@@ -22,3 +22,7 @@ form div button{
 .links a{
     border: 1px solid black !important;
 }
+
+.showqrcode{
+    text-align: center !important;
+}
